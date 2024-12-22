@@ -1,0 +1,28 @@
+<h3>{{ name | titlecase }}</h3>
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name | titlecase }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ edad }}</dd>
+
+  <td>Metodo</td>
+  <dd>metodo</dd>
+
+  <td>Nombre Capitalizado</td>
+  <dd>{{ name | titlecase }}</dd>
+
+  <td>NetWorth</td>
+  <dd>{{ amount | currency }}</dd>
+</dl>
+
+<button
+  *ngIf="name !== 'ironman'"
+  class="btn btn-primary mx-2"
+  (click)="changeHero()"
+>
+  Cambiar Nombre
+</button>
+<button *ngIf="edad !== '27'" class="btn btn-success" (click)="changeAge()">
+  Cambiar Edad
+</button>

@@ -1,0 +1,51 @@
+<h2>Hero List</h2>
+
+@if (heroDeleted) {
+<h3>
+  Heroe Borrado
+  <strong class="text-danger">{{ heroDeleted.name | titlecase }}</strong>
+</h3>
+} @else {
+<h3>No ha borrado nada</h3>
+}
+
+<button
+  *ngIf="heroNames.length > 0"
+  class="btn btn-outline-danger"
+  (click)="removelastHero()"
+>
+  Erase last Heroe
+</button>
+
+<!-- <ul class="mt-2 list-group">
+  @for (hero of heroNames; track $index) {
+  <li class="list-group-item">
+    <strong>{{ hero.name | titlecase }} </strong>
+  </li>
+  }
+</ul> -->
+
+<table
+  tuiTable
+  class="table"
+  [columns]="columns"
+  tuiTheme=""
+  dark
+>
+  <thead>
+    <tr tuiThGroup>
+      <th tuiTh [resizable]="true">Name</th>
+      <th tuiTh [resizable]="false">Age</th>
+    </tr>
+  </thead>
+  <tbody tuiTbody [data]="heroNames">
+    <tr *ngFor="let hero of heroNames" tuiTr>
+      <td *tuiCell="'name'" tuiTd class="td">
+        <span>{{ hero.name | titlecase }}</span>
+      </td>
+      <td *tuiCell="'age'" tuiTd class="td">
+        <span>{{ hero.age }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

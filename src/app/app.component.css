@@ -1,0 +1,14 @@
+button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 2rem;
+  background-color: hsl(296, 64%, 77%);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+button:active{
+  background-color: hsl(296, 50%, 70%);
+}
